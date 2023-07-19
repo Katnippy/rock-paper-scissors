@@ -25,9 +25,23 @@ function getComputerChoice() {
   return computerChoice;
 }
 
+function checkWinner(p, c) {
+  if (p === c) {
+    console.log('It\'s a draw!');
+  } else if (winningChoices.hasOwnProperty(p) && winningChoices[p] === c) {
+    console.log('The player wins!');
+  } else {
+    console.log('The computer wins!');
+  }
+}
+
 function rockPaperScissors() {
   p = getPlayerChoice();
   c = getComputerChoice();
+
+  console.log(`Player choice = ${p}`)
+  console.log(`Computer choice = ${c}`)
+  checkWinner(p, c);
 }
 
 rockPaperScissors();
