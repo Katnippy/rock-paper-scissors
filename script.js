@@ -10,6 +10,7 @@ function validatePlayerChoice(playerChoice) {
     return playerChoice;
   } else {
     alert('Invalid input. Please try again!');
+    
     getPlayerChoice();
   }
 }
@@ -22,6 +23,7 @@ function getPlayerChoice() {
 
 function getComputerChoice() {
   let computerChoice = choices[Math.floor(Math.random() * choices.length)];
+  
   return computerChoice;
 }
 
