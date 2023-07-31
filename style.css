@@ -1,0 +1,25 @@
+body {
+  background: peachpuff;
+  font-family: 'Rubik';
+}
+
+.scores {
+  display: flex;
+  flex: 1;
+  align-items: top;
+  justify-content: space-evenly;
+}
+
+.buttons {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+#rock, #paper, #scissors {
+  width: 8em;
+  height: 8em;
+  margin-left: 4em;
+}
