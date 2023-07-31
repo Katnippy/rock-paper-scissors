@@ -5,22 +5,6 @@ const winningChoices = {
   'scissors': 'paper',
 };
 
-function validatePlayerChoice(playerChoice) {
-  if (choices.includes(playerChoice)) {
-    return playerChoice;
-  } else {
-    alert('Invalid input. Please try again!');
-    
-    getPlayerChoice();
-  }
-}
-
-function getPlayerChoice() {
-  let playerChoice = prompt('Rock, Paper, or Scissors?').toLowerCase();
-
-  return validatePlayerChoice(playerChoice);
-}
-
 function getComputerChoice() {
   let computerChoice = choices[Math.floor(Math.random() * choices.length)];
   
@@ -37,11 +21,18 @@ function checkWinner(p, c) {
   }
 }
 
-function rockPaperScissors() {
-  p = getPlayerChoice();
+function rockPaperScissors(playerChoice) {
+  p = playerChoice;
   c = getComputerChoice();
 
   checkWinner(p, c);
 }
 
-rockPaperScissors();
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    rockPaperScissors(button.id);
+  });
+});
+
